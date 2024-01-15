@@ -1,13 +1,14 @@
 import React from 'react';
-import AdminNavigation from '@/components/features/admin-panel/admin-navigation/admin-navigation';
+import AdminNavigation from '@/app/admin/_components/admin-navigation/admin-navigation';
+import AppContextProvider from '@/context/app-context-provider';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-	return (
-		<div>
-			<AdminNavigation />
-			{children}
-		</div>
-	);
+  return (
+    <AppContextProvider>
+      <AdminNavigation />
+      {children}
+    </AppContextProvider>
+  );
 };
 
 export default Layout;
